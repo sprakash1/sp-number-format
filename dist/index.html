@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>SP-number formate</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jqueryui/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/apps.js"></script>
+	<script>
+
+		$(document).ready(function () {
+			$('#button').click(function () {
+				$('#result').hide();
+				$('#result tbody').empty();
+				var numberStr = $("#numberStr").val();
+				if (numberStr.trim()) {
+					var rex = new RegExp('^[0-9]+(,[0-9]+)*$');
+					if (rex.test(numberStr)) {
+						var resArray = numFormatter(numberStr);
+						var arr = resArray.split(',');
+						var nuAr = numberStr.split(",");
+						$.each(arr, function (index, value) {
+							$('#result tbody').append("<tr><td>" + nuAr[index] + "</td><td>" + value + "</td></tr>");
+						});
+						$('#result').show();
+						return;
+					} else {
+						alert("Enter a single or comma separated multiple numeric value");
+						return null;
+					}
+
+				} else {
+					alert("Kindly enter value");
+					return null;
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<h2>SP-number formate UI Test</h2>
+		<p>Use comma separator(,) for more then one numeric value. Only (0-9 . , allowed)</p>
+		<form>
+			<div class="form-group">
+				<label for="usr">Enter Number :</label>
+				<input type="text" class="form-control" id="numberStr">
+			</div>
+			<div class="form-group">
+				<button type="button" id="button" class="btn btn-primary">format</button>
+			</div>
+		</form>
+		<div id="result" style="display: none;">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Input</th>
+						<th>Output</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John</td>
+						<td>Doe</td>
+					</tr>
+					<tr>
+						<td>Mary</td>
+						<td>Moe</td>
+					</tr>
+					<tr>
+						<td>July</td>
+						<td>Dooley</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
