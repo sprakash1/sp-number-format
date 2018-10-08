@@ -1,0 +1,28 @@
+{
+  "name": "sp-number-format",
+  "version": "1.0.0",
+  "description": "JavaScript number format method and add unit letters like 1000 to 1K",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sprakash1/sp-number-format.git"
+  },
+  "keywords": [
+    "number-format",
+    "number",
+    "formatter"
+  ],
+  "author": "Santosh Prakash <sps.srk@gmail.com> (https://www.linkedin.com/in/sintu)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sprakash1/sp-number-format/issues"
+  },
+  "homepage": "https://github.com/sprakash1/sp-number-format#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
